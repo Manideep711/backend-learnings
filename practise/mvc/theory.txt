@@ -1,0 +1,24 @@
+1. Model
+The Model represents the data and the business logic of the application.
+It interacts with the database and performs operations like CRUD (Create, Read, Update, Delete).
+In a Node.js application, Mongoose models are often used for MongoDB as the data layer.
+2. View
+The View represents the UI or the output that is presented to the client.
+In the context of backend development with Node.js, this can be HTML templates (rendered using template engines like EJS, Pug, or Handlebars), or more commonly, JSON responses in APIs.
+3. Controller
+The Controller handles the incoming HTTP requests from the client.
+It processes these requests, interacts with the Model to get or manipulate data, and sends a response back to the client (View).
+In Express, each route typically has an associated controller function.
+
+
+
+project
+│
+├── models
+│   └── user.js
+├── controllers
+│   └── userController.js
+├── routes
+│   └── userRoutes.js
+├── app.js
+└── package.json

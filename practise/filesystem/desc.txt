@@ -1,0 +1,6 @@
+Project: Simple File Manager Using Express, fs, and path
+In this project, you can:
+
+List files in a directory.
+Read the content of a file.
+Create, update, and delete files.
