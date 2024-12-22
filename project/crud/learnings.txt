@@ -1,0 +1,32 @@
+ app.use(cors())
+Purpose: Enables Cross-Origin Resource Sharing (CORS).
+What It Does: Allows your server to handle requests from different origins (e.g., from a frontend running on http://localhost:3000 to a backend running on http://localhost:5000).
+Usage: Without this, browsers may block requests due to the same-origin policy.
+Example:
+const cors = require('cors');
+app.use(cors());
+You can configure it for specific origins or behaviors:
+app.use(cors({
+  origin: 'http://example.com', // Allow only this origin
+  methods: 'GET,POST',         // Allow specific HTTP methods
+}));
+2. app.use(express.json())
+Purpose: Parses incoming requests with JSON payloads.
+What It Does: It automatically converts the request body (in JSON format) into a JavaScript object, which can be accessed in req.body.
+Usage: Essential when you send JSON data from the client (e.g., API POST requests with a JSON payload).
+app.post('/api', (req, res) => {
+  console.log(req.body); // Access parsed JSON body
+  res.send('Data received!');
+});
+3. app.use(express.urlencoded({ extended: false }))
+Purpose: Parses incoming requests with (URL-encoded) payloads (form data).
+What It Does: Converts application/x-www-form-urlencoded data into a JavaScript object.
+Parameters:
+extended: false: Use the querystring library for parsing, which supports simple key-value pairs.
+extended: true: Use the qs library for parsing, which allows nested objects.
+Usage: Needed when handling form submissions via POST requests.
+Example:
+app.post('/form', (req, res) => {
+  console.log(req.body); // Access parsed form data
+  res.send('Form data received!');
+});
