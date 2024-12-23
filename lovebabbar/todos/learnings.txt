@@ -1,0 +1,1 @@
+server mapped with router mapped with controllers which contains business logic and model for creating schema and .env contains port and mongo url config contains mongoose 
